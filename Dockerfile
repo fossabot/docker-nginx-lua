@@ -18,10 +18,12 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 RUN apk add --update --no-cache \
     wget \
-    alpine-sdk \
+    make \
+    g++ \
     linux-headers \
     perl \
-    pcre \
+    unzip \
+    libuuid \
     pcre-dev \
     zlib-dev
 
@@ -84,10 +86,10 @@ RUN wget --no-check-certificate https://github.com/pagespeed/ngx_pagespeed/archi
 
 RUN ./configure \
         --prefix=$NGINX_DIR \
-        --add-module=$HEADERS_MORE_MODULE_PATH \
-        --add-module=$NGX_DEV_MODULE_PATH \
+        --add-module=$GOOGLE_PAGESPEED_MODULE_PATH \
         --add-module=$LUA_MODULE_PATH \
-        # --add-module=$GOOGLE_PAGESPEED_MODULE_PATH \
+        --add-module=$NGX_DEV_MODULE_PATH \
+        --add-module=$HEADERS_MORE_MODULE_PATH \
         --with-openssl=$OPENSSL_MODULE_PATH \
         --with-http_v2_module \
         --with-http_ssl_module \
