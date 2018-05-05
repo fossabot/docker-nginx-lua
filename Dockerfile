@@ -41,8 +41,8 @@ ENV LUA_VERSION=0.10.13
 ENV OPENSSL_VERSION=1.0.2o
 # https://github.com/openresty/headers-more-nginx-module/releases
 ENV HEADERS_MORE_VERSION=0.33
-# https://github.com/pagespeed/ngx_pagespeed/releases ======= v1.13.35.2-stable
-ENV GOOGLE_PAGESPEED_VERSION=1.12.34.3-stable
+# https://github.com/pagespeed/ngx_pagespeed/releases
+ENV GOOGLE_PAGESPEED_VERSION=1.13.35.2-stable
 
 ENV NGX_DEV_MODULE_PATH=$NGINX_TEMP_DIR/ngx_devel_kit-$NGINX_DEV_VERSION
 ENV LUAJIT_MODULE_PATH=$NGINX_TEMP_DIR/LuaJIT-$LUA_JIT_VERSION
